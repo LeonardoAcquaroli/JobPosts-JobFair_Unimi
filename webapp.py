@@ -44,7 +44,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             left.write("↳")
             user_text_input = right.text_input(f"Search for a {column}",)
             if user_text_input:
-                df = df[df[column].str.contains(user_text_input)]
+                df = df[df[column].str.contains(user_text_input, case=False)]
     return df
 
 st.markdown(filter_dataframe(jobs_posts).style.hide(axis="index").to_html(escape=False), unsafe_allow_html=True)
