@@ -9,7 +9,7 @@ st.write("Search among all the job posts and not only company-by-company as on t
 
 # %%%
 # jobs_posts = pd.read_excel("Job posts.xlsx")
-jobs_posts = pd.read_excel(r"C:\Users\leoac\OneDrive\Desktop\Coding\Python apps\Web scraping vari\Jobfair 23 annunci\JobPosts-JobFair_Unimi\Job posts.xlsx")
+jobs_posts = pd.read_excel("Job posts.xlsx")
 # Function to create clickable link buttons
 def make_clickable(link):
     # target _blank to open new window
