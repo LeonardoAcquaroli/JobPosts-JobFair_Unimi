@@ -28,7 +28,7 @@ def boolean_to_checkbox(value):
 # Apply the make_clickable function
 jobs_posts['Firm page'] = jobs_posts['Firm page'].apply(make_clickable)
 # Apply the function to the "International students" column
-# jobs_posts["International students"] = jobs_posts["International students"].apply(boolean_to_checkbox)
+jobs_posts["International students"] = jobs_posts["International students"].apply(boolean_to_checkbox)
 # %%
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
