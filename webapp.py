@@ -10,12 +10,24 @@ st.write("Search among all the job posts and not only company-by-company as on t
 # %%%
 # jobs_posts = pd.read_excel("Job posts.xlsx")
 jobs_posts = pd.read_csv("https://raw.githubusercontent.com/LeonardoAcquaroli/JobPosts-JobFair_Unimi/main/Job%20posts.csv", sep=";")
+# %%
+
 # Function to create clickable link buttons
 def make_clickable(link):
     # target _blank to open new window
     return f'<a target="_blank" href="{link}">{link}</a>'
 
+# Define a function to convert boolean values to HTML checkboxes
+def boolean_to_checkbox(value):
+    if value:
+        return '<span style="color:green">&#10004;</span>'  # Green checkbox for True
+    else:
+        return '<span style="color:red">&#10008;</span>'  # Red cross for False
+
+# Apply the make_clickable function
 jobs_posts['Firm page'] = jobs_posts['Firm page'].apply(make_clickable)
+# Apply the function to the "International students" column
+jobs_posts["International students"] = jobs_posts["International students"].apply(boolean_to_checkbox)
 # %%
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
