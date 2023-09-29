@@ -61,3 +61,4 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 st.markdown(filter_dataframe(jobs_posts).style.hide(axis="index").to_html(escape=False), unsafe_allow_html=True)
+# %%
